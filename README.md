@@ -1,5 +1,5 @@
 
-# AngularJS tree accordion with multiple depth
+# Lola Nested Panel Tree AngularJS accordion with multilevel depth
 
   - Allows for a nested tree structure
   - Works with (or without) `ng-repeat`
