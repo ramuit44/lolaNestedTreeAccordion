@@ -1,9 +1,8 @@
 {
-  "name": "v-accordion",
-  "description": "vAccordion - AngularJS multi-level accordion component",
-  "version": "1.6.0",
-  "author": "Łukasz Wątroba <l@lukaszwatroba.com>",
-  "license": "MIT",
+  "name": "lola-accordion",
+  "description": "lolaAccordion - AngularJS nested tree panel component",
+  "version": "1.0.0",
+  "author": "Sriram",
   "keywords": [
     "angular",
     "accordion",
@@ -14,13 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LukaszWatroba/v-accordion.git"
+    "url": "https://github.com/ramuit44/lolaNestedTreeAccordion.git"
   },
   "main": "index.js",
-  "bugs": {
-    "url": "https://github.com/LukaszWatroba/v-accordion/issues"
-  },
-  "homepage": "http://lukaszwatroba.github.io/v-accordion",
   "devDependencies": {
     "chai": "^1.9.1",
     "chai-jquery": "^1.2.3",
