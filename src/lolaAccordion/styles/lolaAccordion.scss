@@ -1,0 +1,25 @@
+/***************************************
+  lolaAccordion
+ ***************************************/
+
+
+/**
+ * Example HTML:
+ *
+  <lola-accordion class="lolaAccordion--default">
+    <lola-pane>
+      <lola-pane-header id="pane-header" aria-controls="pane-content">
+         [content]
+      </lola-pane-header>
+      <lola-pane-content id="pane-content" aria-labelledby="pane-header">
+        [content]
+      </lola-pane-content>
+    </lola-pane>
+  </lola-accordion>
+ */
+
+
+@import 'settings';
+@import 'base';
+@import 'theme';
+

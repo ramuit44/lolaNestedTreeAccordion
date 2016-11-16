@@ -1,15 +1,15 @@
 
 
-// vAccordion directive
-angular.module('vAccordion.directives')
-  .directive('vAccordion', vAccordionDirective);
+// lolaAccordion directive
+angular.module('lolaAccordion.directives')
+  .directive('lolaAccordion', vAccordionDirective);
 
 
 function vAccordionDirective ($timeout) {
   return {
     restrict: 'E',
     transclude: true,
-    controller: vAccordionController,
+    controller: lolaAccordionController,
     scope: {
       control: '=?',
       expandCb: '&?onexpand',
@@ -54,18 +54,18 @@ function vAccordionDirective ($timeout) {
         }
 
         $timeout(function () {
-          var eventName = (angular.isDefined(ctrl.getAccordionId())) ? ctrl.getAccordionId() + ':onReady' : 'vAccordion:onReady';
+          var eventName = (angular.isDefined(ctrl.getAccordionId())) ? ctrl.getAccordionId() + ':onReady' : 'lolaAccordion:onReady';
           scope.$emit(eventName);
         }, 0);
       }
     }
   };
 }
-vAccordionDirective.$inject = ['$timeout'];
+lolaAccordionDirective.$inject = ['$timeout'];
 
 
-// vAccordion directive controller
-function vAccordionController ($scope) {
+// lolaAccordion directive controller
+function lolaAccordionController ($scope) {
   var ctrl = this;
   var isDisabled = false;
 
@@ -170,7 +170,7 @@ function vAccordionController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+            paneToFocus.paneElement.find('lola-pane-header')[0].focus();
 
         break;
       }
@@ -191,7 +191,7 @@ function vAccordionController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+            paneToFocus.paneElement.find('lola-pane-header')[0].focus();
 
         break;
       }
@@ -286,4 +286,4 @@ function vAccordionController ($scope) {
     hasExpandedPane: ctrl.hasExpandedPane
   };
 }
-vAccordionController.$inject = ['$scope'];
+lolaAccordionController.$inject = ['$scope'];

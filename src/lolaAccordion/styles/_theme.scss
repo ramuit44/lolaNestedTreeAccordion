@@ -1,30 +1,30 @@
-@if $v-accordion-default-theme {
+@if $lola-accordion-default-theme {
   /* Theme: default
    ***************************************/
 
 
-  .vAccordion--default {
+  .lolaAccordion--default {
 
-    v-accordion {
-      margin-top: $v-accordion-spacing;
-      padding-left: $v-accordion-spacing;
+    lola-accordion {
+      margin-top: $lola-accordion-spacing;
+      padding-left: $lola-accordion-spacing;
     }
 
-    v-pane-content {
+    lola-pane-content {
       > div {
-        padding-bottom: $v-accordion-spacing;
+        padding-bottom: $lola-accordion-spacing;
         opacity: 0;
         transform: translate3d(0, 30px, 0);
-        transition: all $v-pane-expand-animation-duration;
+        transition: all $lola-pane-expand-animation-duration;
       }
     }
 
-    v-pane {
+    lola-pane {
       overflow: hidden;
 
       &.is-expanded {
-        > v-pane-header {
-          border-bottom-color: $v-pane-expanded-border-color;
+        > lola-pane-header {
+          border-bottom-color: $lola-pane-expanded-border-color;
 
           &::after {
             transform: rotate(90deg);
@@ -35,13 +35,13 @@
           }
         }
 
-        > v-pane-content > div {
+        > lola-pane-content > div {
           opacity: 1;
           transform: translate3d(0, 0, 0);
         }
       }
 
-      &[disabled] v-pane-header {
+      &[disabled] lola-pane-header {
         &::after,
         &::before {
           display: none;
@@ -49,11 +49,11 @@
     	}
     }
 
-    v-pane-header {
+    lola-pane-header {
       padding: 5px 0;
-      margin-bottom: $v-accordion-spacing;
-      border-bottom: 2px solid $v-pane-border-color;
-      transition: all $v-pane-hover-animation-duration;
+      margin-bottom: $lola-accordion-spacing;
+      border-bottom: 2px solid $lola-pane-border-color;
+      transition: all $lola-pane-hover-animation-duration;
 
       &::after,
       &::before {
@@ -64,10 +64,10 @@
         right: 0;
         width: 10px;
         height: 1px;
-        background-color: $v-pane-icon-color;
+        background-color: $lola-pane-icon-color;
         transform-origin: 50% 50%;
         will-change: transform;
-        transition: all $v-pane-hover-animation-duration;
+        transition: all $lola-pane-hover-animation-duration;
       }
 
       &::before {
@@ -76,7 +76,7 @@
 
       &:hover,
       &:focus {
-        color: $v-pane-hover-color;
+        color: $lola-pane-hover-color;
       }
     }
   }

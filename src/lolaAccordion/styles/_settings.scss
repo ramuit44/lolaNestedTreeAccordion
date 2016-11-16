@@ -1,0 +1,21 @@
+// -------------------------------------
+// Settings
+// -------------------------------------
+
+
+$lola-accordion-default-theme:         true !default;
+
+
+// Accordion
+// -------------------------------------
+
+$lola-accordion-spacing:               20px !default;
+
+$lola-pane-border-color:               #D8D8D8 !default;
+$lola-pane-expanded-border-color:      #2196F3 !default;
+$lola-pane-icon-color:                 #2196F3 !default;
+$lola-pane-hover-color:                #2196F3 !default;
+$lola-pane-disabled-opacity:           0.6 !default;
+
+$lola-pane-expand-animation-duration:  0.5s  !default;
+$lola-pane-hover-animation-duration:   0.25s !default;

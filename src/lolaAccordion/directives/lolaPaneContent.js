@@ -1,14 +1,14 @@
 
 
-// vPaneContent directive
-angular.module('vAccordion.directives')
-  .directive('vPaneContent', vPaneContentDirective);
+// lolaPaneContent directive
+angular.module('lolaAccordion.directives')
+  .directive('lolaPaneContent', lolaPaneContentDirective);
 
 
-function vPaneContentDirective () {
+function lolaPaneContentDirective () {
   return {
     restrict: 'E',
-    require: '^vPane',
+    require: '^lolaPane',
     transclude: true,
     template: '<div ng-transclude></div>',
     scope: {},

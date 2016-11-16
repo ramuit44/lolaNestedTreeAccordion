@@ -1,16 +1,9 @@
-/**
- * vAccordion - AngularJS multi-level accordion component
- * @version v1.6.0
- * @link http://lukaszwatroba.github.io/v-accordion
- * @author Łukasz Wątroba <l@lukaszwatroba.com>
- * @license MIT License, http://www.opensource.org/licenses/MIT
- */
 
 (function (angular) {
 'use strict';
 
 // Config
-angular.module('vAccordion.config', [])
+angular.module('lolaAccordion.config', [])
   .constant('accordionConfig', {
     states: {
       expanded: 'is-expanded'
@@ -20,7 +13,7 @@ angular.module('vAccordion.config', [])
   .animation('.is-expanded', [ '$animateCss', 'accordionConfig', function ($animateCss, accordionConfig) {
     return {
       addClass: function (element, className, done) {
-        var paneContent = angular.element(element[0].querySelector('v-pane-content')),
+        var paneContent = angular.element(element[0].querySelector('lola-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
 
         var height = paneInner[0].offsetHeight;
@@ -44,7 +37,7 @@ angular.module('vAccordion.config', [])
         };
       },
       removeClass: function (element, className, done) {
-        var paneContent = angular.element(element[0].querySelector('v-pane-content')),
+        var paneContent = angular.element(element[0].querySelector('lola-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
 
         var height = paneInner[0].offsetHeight;
@@ -69,18 +62,18 @@ angular.module('vAccordion.config', [])
 
 
 // Modules
-angular.module('vAccordion.directives', []);
-angular.module('vAccordion',
+angular.module('lolaAccordion.directives', []);
+angular.module('lolaAccordion',
   [
-    'vAccordion.config',
-    'vAccordion.directives'
+    'lolaAccordion.config',
+    'lolaAccordion.directives'
   ]);
 
 
 
-// vAccordion directive
-angular.module('vAccordion.directives')
-  .directive('vAccordion', vAccordionDirective);
+// lolaAccordion directive
+angular.module('lolaAccordion.directives')
+  .directive('lolaAccordion', vAccordionDirective);
 
 
 function vAccordionDirective ($timeout) {
@@ -132,7 +125,7 @@ function vAccordionDirective ($timeout) {
         }
 
         $timeout(function () {
-          var eventName = (angular.isDefined(ctrl.getAccordionId())) ? ctrl.getAccordionId() + ':onReady' : 'vAccordion:onReady';
+          var eventName = (angular.isDefined(ctrl.getAccordionId())) ? ctrl.getAccordionId() + ':onReady' : 'lolaAccordion:onReady';
           scope.$emit(eventName);
         }, 0);
       }
@@ -142,7 +135,7 @@ function vAccordionDirective ($timeout) {
 vAccordionDirective.$inject = ['$timeout'];
 
 
-// vAccordion directive controller
+// lolaAccordion directive controller
 function vAccordionController ($scope) {
   var ctrl = this;
   var isDisabled = false;
@@ -248,7 +241,7 @@ function vAccordionController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+            paneToFocus.paneElement.find('lola-pane-header')[0].focus();
 
         break;
       }
@@ -269,7 +262,7 @@ function vAccordionController ($scope) {
         }
 
         var paneToFocus = $scope.panes[paneToFocusIndex];
-            paneToFocus.paneElement.find('v-pane-header')[0].focus();
+            paneToFocus.paneElement.find('lola-pane-header')[0].focus();
 
         break;
       }
@@ -369,14 +362,14 @@ vAccordionController.$inject = ['$scope'];
 
 
 // vPane directive
-angular.module('vAccordion.directives')
+angular.module('lolaAccordion.directives')
   .directive('vPane', vPaneDirective);
 
 
 function vPaneDirective ($timeout, $animate, accordionConfig) {
   return {
     restrict: 'E',
-    require: '^vAccordion',
+    require: '^lolaAccordion',
     transclude: true,
     controller: vPaneController,
     scope: {
@@ -401,18 +394,18 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
 
       var states = accordionConfig.states;
 
-      var paneHeader = iElement.find('v-pane-header'),
-          paneContent = iElement.find('v-pane-content'),
+      var paneHeader = iElement.find('lola-pane-header'),
+          paneContent = iElement.find('lola-pane-content'),
           paneInner = paneContent.find('div');
 
       var accordionId = accordionCtrl.getAccordionId();
 
       if (!paneHeader[0]) {
-        throw new Error('The `v-pane-header` directive can\'t be found');
+        throw new Error('The `lola-pane-header` directive can\'t be found');
       }
 
       if (!paneContent[0]) {
-        throw new Error('The `v-pane-content` directive can\'t be found');
+        throw new Error('The `lola-pane-content` directive can\'t be found');
       }
 
       scope.paneElement = iElement;
@@ -424,7 +417,7 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
       accordionCtrl.addPane(scope);
 
       function emitEvent (eventName) {
-        eventName = (angular.isDefined(accordionId)) ? accordionId + ':' + eventName : 'vAccordion:' + eventName;
+        eventName = (angular.isDefined(accordionId)) ? accordionId + ':' + eventName : 'lolaAccordion:' + eventName;
         scope.$emit(eventName);
       }
 
@@ -548,7 +541,7 @@ vPaneController.$inject = ['$scope'];
 
 
 // vPaneContent directive
-angular.module('vAccordion.directives')
+angular.module('lolaAccordion.directives')
   .directive('vPaneContent', vPaneContentDirective);
 
 
@@ -569,14 +562,14 @@ function vPaneContentDirective () {
 
 
 // vPaneHeader directive
-angular.module('vAccordion.directives')
+angular.module('lolaAccordion.directives')
   .directive('vPaneHeader', vPaneHeaderDirective);
 
 
 function vPaneHeaderDirective () {
   return {
     restrict: 'E',
-    require: ['^vPane', '^vAccordion'],
+    require: ['^vPane', '^lolaAccordion'],
     transclude: true,
     template: '<div ng-transclude></div>',
     scope: {},

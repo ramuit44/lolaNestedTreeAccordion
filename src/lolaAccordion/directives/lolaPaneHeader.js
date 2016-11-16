@@ -1,14 +1,14 @@
 
 
-// vPaneHeader directive
-angular.module('vAccordion.directives')
-  .directive('vPaneHeader', vPaneHeaderDirective);
+// lolaPaneHeader directive
+angular.module('lolaAccordion.directives')
+  .directive('lolaPaneHeader', lolaPaneHeaderDirective);
 
 
-function vPaneHeaderDirective () {
+function lolaPaneHeaderDirective () {
   return {
     restrict: 'E',
-    require: ['^vPane', '^vAccordion'],
+    require: ['^lolaPane', '^lolaAccordion'],
     transclude: true,
     template: '<div ng-transclude></div>',
     scope: {},

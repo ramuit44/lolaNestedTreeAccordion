@@ -1,6 +1,6 @@
 
 // Config
-angular.module('vAccordion.config', [])
+angular.module('lolaAccordion.config', [])
   .constant('accordionConfig', {
     states: {
       expanded: 'is-expanded'
@@ -10,7 +10,7 @@ angular.module('vAccordion.config', [])
   .animation('.is-expanded', [ '$animateCss', 'accordionConfig', function ($animateCss, accordionConfig) {
     return {
       addClass: function (element, className, done) {
-        var paneContent = angular.element(element[0].querySelector('v-pane-content')),
+        var paneContent = angular.element(element[0].querySelector('lola-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
 
         var height = paneInner[0].offsetHeight;
@@ -34,7 +34,7 @@ angular.module('vAccordion.config', [])
         };
       },
       removeClass: function (element, className, done) {
-        var paneContent = angular.element(element[0].querySelector('v-pane-content')),
+        var paneContent = angular.element(element[0].querySelector('lola-pane-content')),
             paneInner = angular.element(paneContent[0].querySelector('div'));
 
         var height = paneInner[0].offsetHeight;
@@ -59,9 +59,9 @@ angular.module('vAccordion.config', [])
 
 
 // Modules
-angular.module('vAccordion.directives', []);
-angular.module('vAccordion',
+angular.module('lolaAccordion.directives', []);
+angular.module('lolaAccordion',
   [
-    'vAccordion.config',
-    'vAccordion.directives'
+    'lolaAccordion.config',
+    'lolaAccordion.directives'
   ]);

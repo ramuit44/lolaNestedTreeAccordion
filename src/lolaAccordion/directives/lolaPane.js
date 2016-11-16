@@ -1,16 +1,16 @@
 
 
 // vPane directive
-angular.module('vAccordion.directives')
+angular.module('lolaAccordion.directives')
   .directive('vPane', vPaneDirective);
 
 
-function vPaneDirective ($timeout, $animate, accordionConfig) {
+function lolaPaneDirective ($timeout, $animate, accordionConfig) {
   return {
     restrict: 'E',
-    require: '^vAccordion',
+    require: '^lolaAccordion',
     transclude: true,
-    controller: vPaneController,
+    controller: lolaPaneController,
     scope: {
       isExpanded: '=?expanded',
       isDisabled: '=?ngDisabled',
@@ -33,18 +33,18 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
 
       var states = accordionConfig.states;
 
-      var paneHeader = iElement.find('v-pane-header'),
-          paneContent = iElement.find('v-pane-content'),
+      var paneHeader = iElement.find('lola-pane-header'),
+          paneContent = iElement.find('lola-pane-content'),
           paneInner = paneContent.find('div');
 
       var accordionId = accordionCtrl.getAccordionId();
 
       if (!paneHeader[0]) {
-        throw new Error('The `v-pane-header` directive can\'t be found');
+        throw new Error('The `lola-pane-header` directive can\'t be found');
       }
 
       if (!paneContent[0]) {
-        throw new Error('The `v-pane-content` directive can\'t be found');
+        throw new Error('The `lola-pane-content` directive can\'t be found');
       }
 
       scope.paneElement = iElement;
@@ -56,7 +56,7 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
       accordionCtrl.addPane(scope);
 
       function emitEvent (eventName) {
-        eventName = (angular.isDefined(accordionId)) ? accordionId + ':' + eventName : 'vAccordion:' + eventName;
+        eventName = (angular.isDefined(accordionId)) ? accordionId + ':' + eventName : 'lolaAccordion:' + eventName;
         scope.$emit(eventName);
       }
 
@@ -131,11 +131,11 @@ function vPaneDirective ($timeout, $animate, accordionConfig) {
     }
   };
 }
-vPaneDirective.$inject = ['$timeout', '$animate', 'accordionConfig'];
+lolaPaneDirective.$inject = ['$timeout', '$animate', 'accordionConfig'];
 
 
-// vPane directive controller
-function vPaneController ($scope) {
+// lolaPane directive controller
+function lolaPaneController ($scope) {
   var ctrl = this;
 
   ctrl.isExpanded = function isExpanded () {
@@ -175,4 +175,4 @@ function vPaneController ($scope) {
     isExpanded: ctrl.isExpanded
   };
 }
-vPaneController.$inject = ['$scope'];
+lolaPaneController.$inject = ['$scope'];

@@ -1,42 +1,35 @@
-/**
- * vAccordion - AngularJS multi-level accordion component
- * @version v1.6.0
- * @link http://lukaszwatroba.github.io/v-accordion
- * @author Łukasz Wątroba <l@lukaszwatroba.com>
- * @license MIT License, http://www.opensource.org/licenses/MIT
- */
 
 /***************************************
-  vAccordion
+ lolaAccordion
  ***************************************/
 /**
  * Example HTML:
  *
-  <v-accordion class="vAccordion--default">
-    <v-pane>
-      <v-pane-header id="pane-header" aria-controls="pane-content">
+  <lola-accordion class="lolaAccordion--default">
+    <lola-pane>
+      <lola-pane-header id="pane-header" aria-controls="pane-content">
          [content]
-      </v-pane-header>
-      <v-pane-content id="pane-content" aria-labelledby="pane-header">
+      </lola-pane-header>
+      <lola-pane-content id="pane-content" aria-labelledby="pane-header">
         [content]
-      </v-pane-content>
-    </v-pane>
-  </v-accordion>
+      </lola-pane-content>
+    </lola-pane>
+  </lola-accordion>
  */
 /* Base styles
  ***************************************/
-v-accordion {
+lola-accordion {
   display: block; }
 
-v-pane {
+lola-pane {
   display: block; }
-  v-pane.is-expanded > v-pane-content > div {
+  lola-pane.is-expanded > lola-pane-content > div {
     display: visible; }
-  v-pane[disabled] > v-pane-header {
+  lola-pane[disabled] > lola-pane-header {
     opacity: 0.6;
     pointer-events: none; }
 
-v-pane-header {
+lola-pane-header {
   display: block;
   position: relative;
   cursor: pointer;
@@ -45,26 +38,26 @@ v-pane-header {
       -ms-user-select: none;
           user-select: none;
   outline: none; }
-  v-pane-header:focus {
+  lola-pane-header:focus {
     outline: none; }
-  v-pane-header > div {
+  lola-pane-header > div {
     display: block; }
 
-v-pane-content {
+lola-pane-content {
   display: block;
   position: relative;
   overflow: hidden;
   max-height: 0px; }
-  v-pane-content > div {
+  lola-pane-content > div {
     visibility: none; }
 
 /* Theme: default
    ***************************************/
-.vAccordion--default v-accordion {
+.lolaAccordion--default lola-accordion {
   margin-top: 20px;
   padding-left: 20px; }
 
-.vAccordion--default v-pane-content > div {
+.lolaAccordion--default lola-pane-content > div {
   padding-bottom: 20px;
   opacity: 0;
   -webkit-transform: translate3d(0, 30px, 0);
@@ -72,31 +65,31 @@ v-pane-content {
   -webkit-transition: all 0.5s;
           transition: all 0.5s; }
 
-.vAccordion--default v-pane {
+.lolaAccordion--default lola-pane {
   overflow: hidden; }
-  .vAccordion--default v-pane.is-expanded > v-pane-header {
+  .lolaAccordion--default lola-pane.is-expanded > lola-pane-header {
     border-bottom-color: #2196F3; }
-    .vAccordion--default v-pane.is-expanded > v-pane-header::after {
+    .lolaAccordion--default lola-pane.is-expanded > lola-pane-header::after {
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg);
       opacity: 0; }
-    .vAccordion--default v-pane.is-expanded > v-pane-header::before {
+    .lolaAccordion--default lola-pane.is-expanded > lola-pane-header::before {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg); }
-  .vAccordion--default v-pane.is-expanded > v-pane-content > div {
+  .lolaAccordion--default lola-pane.is-expanded > lola-pane-content > div {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
-  .vAccordion--default v-pane[disabled] v-pane-header::after, .vAccordion--default v-pane[disabled] v-pane-header::before {
+  .lolaAccordion--default lola-pane[disabled] lola-pane-header::after, .lolaAccordion--default lola-pane[disabled] lola-pane-header::before {
     display: none; }
 
-.vAccordion--default v-pane-header {
+.lolaAccordion--default lola-pane-header {
   padding: 5px 0;
   margin-bottom: 20px;
   border-bottom: 2px solid #D8D8D8;
   -webkit-transition: all 0.25s;
           transition: all 0.25s; }
-  .vAccordion--default v-pane-header::after, .vAccordion--default v-pane-header::before {
+  .lolaAccordion--default lola-pane-header::after, .lolaAccordion--default lola-pane-header::before {
     content: '';
     display: block;
     position: absolute;
@@ -110,8 +103,8 @@ v-pane-content {
     will-change: transform;
     -webkit-transition: all 0.25s;
             transition: all 0.25s; }
-  .vAccordion--default v-pane-header::before {
+  .lolaAccordion--default lola-pane-header::before {
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg); }
-  .vAccordion--default v-pane-header:hover, .vAccordion--default v-pane-header:focus {
+  .lolaAccordion--default lola-pane-header:hover, .lolaAccordion--default lola-pane-header:focus {
     color: #2196F3; }

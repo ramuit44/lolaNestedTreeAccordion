@@ -2,28 +2,28 @@
  ***************************************/
 
 
-v-accordion {
+lola-accordion {
   display: block;
 }
 
-v-pane {
+lola-pane {
   display: block;
 
   &.is-expanded {
-    > v-pane-content {
+    > lola-pane-content {
       > div {
         display: visible;
       }
     }
   }
 
-  &[disabled] > v-pane-header {
-    opacity: $v-pane-disabled-opacity;
+  &[disabled] > lola-pane-header {
+    opacity: $lola-pane-disabled-opacity;
     pointer-events: none;
   }
 }
 
-v-pane-header {
+lola-pane-header {
   display: block;
   position: relative;
   cursor: pointer;
@@ -39,7 +39,7 @@ v-pane-header {
   }
 }
 
-v-pane-content {
+lola-pane-content {
   display: block;
   position: relative;
   overflow: hidden;
