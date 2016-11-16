@@ -9,8 +9,6 @@
 
 ## Usage
 
-  - If you use [bower](http://bower.io/) or [npm](https://www.npmjs.com/), just `bower/npm install lola-accordion`. If not, download files [from the github repo](./dist).
-
   - Include `angular.js`, `angular-animate.js`, `lola-accordion.js`, and `lola-accordion.css`:
   ```html
   <link href="lola-accordion.css" rel="stylesheet" />
