@@ -5,6 +5,7 @@
   - Works with (or without) `ng-repeat`
   - Allows multiple sections to be open at once
 
+![ScreenShot](https://github.com/ramuit44/lolaNestedTreeAccordion/blob/master/screenshot1.png)
 
 
 ## Usage
